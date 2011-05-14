@@ -1,6 +1,4 @@
 
-class DirectoryDoesNotExist < StandardError; end
-
 module Homebase
 
   # :stopdoc:
