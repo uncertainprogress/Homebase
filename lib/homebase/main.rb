@@ -10,8 +10,13 @@ module Homebase
    end
   
   def self.set_app(name, create = true) 
+    
     @app_name = name
-    @app_path = File.join(@home_path + ::File::SEPARATOR + '.test_app')
+    if(@app_name[0] != 46)
+      @app_name = '.' + @app_name
+    end
+      
+    @app_path = File.join(@home_path + ::File::SEPARATOR + @app_name)
     
     if(!File.directory?(@app_path))
       
@@ -19,7 +24,7 @@ module Homebase
          raise DirectoryDoesNotExist.new("The specified configuration directory doesn't exist in the user's home directory.")
       end
       
-      
+      Dir.mkdir(@app_path)
     end
     
   end
