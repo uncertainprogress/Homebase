@@ -12,7 +12,7 @@ module Homebase
   def self.set_app(name, create = true) 
     
     @app_name = name
-    if(@app_name[0] != 46)
+    if(@app_name[0] != '.')
       @app_name = '.' + @app_name
     end
       
@@ -33,7 +33,7 @@ module Homebase
     return @app_path
   end
   
-  def self.get_file(name)
+  def self.get_file_path(name)
     
   end
   

@@ -39,12 +39,22 @@ describe Homebase do
     end
   end
   
+  
   context 'an existing application' do
     before :each do
-      Homebase.set_app('.test_app')
+      Homebase.set_app('test_app')
+      File.touch(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app' + ::File::SEPARATOR + 'test_file'))
     end
     
+    after :each do
+      if(File.directory?(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app')))
+        Dir.rmdir(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app'))
+      end
+    end
     
+    it 'correctly accesses a file in the home directory' do
+      
+    end
   end
   
 end
