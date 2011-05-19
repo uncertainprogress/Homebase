@@ -1,6 +1,8 @@
 
 require File.expand_path(
     File.join(File.dirname(__FILE__), %w[.. lib homebase]))
+    
+require 'fileutils'
 
 RSpec.configure do |config|
   # == Mock Framework

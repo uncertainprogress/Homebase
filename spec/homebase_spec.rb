@@ -10,7 +10,7 @@ describe Homebase do
     
     after :each do
       if(File.directory?(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app')))
-        Dir.rmdir(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app'))
+        FileUtils.rm_rf(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app'), )
       end
     end
   
@@ -43,17 +43,21 @@ describe Homebase do
   context 'an existing application' do
     before :each do
       Homebase.set_app('test_app')
-      File.touch(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app' + ::File::SEPARATOR + 'test_file'))
+      File.new(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app' + ::File::SEPARATOR + 'test_file'), 'w')
     end
     
     after :each do
       if(File.directory?(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app')))
-        Dir.rmdir(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app'))
+        FileUtils.rm_rf(File.join(File.expand_path('~') + ::File::SEPARATOR + '.test_app'))
       end
     end
     
     it 'correctly accesses a file in the home directory' do
-      
+      Homebase.get_file_path('test_file').should == Homebase.get_app_path() + ::File::SEPARATOR + 'test_file'
+    end
+    
+    it 'returns nil if the file does not exist' do
+      Homebase.get_file_path('random_file').should == nil
     end
   end
   

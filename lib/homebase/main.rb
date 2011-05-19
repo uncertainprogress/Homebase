@@ -34,7 +34,11 @@ module Homebase
   end
   
   def self.get_file_path(name)
+    if(File.exists?(@app_path + ::File::SEPARATOR + name))
+      return @app_path + ::File::SEPARATOR + name
+    end
     
+    return nil
   end
   
 end
