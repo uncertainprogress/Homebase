@@ -10,8 +10,8 @@ task 'gem:release' => 'test:run'
 
 Bones {
   name     'homebase'
-  authors  'FIXME (who is writing this software)'
-  email    'FIXME (your e-mail)'
-  url      'FIXME (project homepage)'
+  authors  'Jeremy Witmer'
+  email    'jtwitmer@gmail.com'
+  url      'git'
 }
 
