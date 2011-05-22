@@ -12,6 +12,6 @@ Bones {
   name     'homebase'
   authors  'Jeremy Witmer'
   email    'jtwitmer@gmail.com'
-  url      'git'
+  url      'https://github.com/uncertainprogress/Homebase'
 }
 
