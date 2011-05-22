@@ -1,4 +1,10 @@
 
+class DirectoryDoesNotExist < StandardError; end
+class AppNameNotSet < StandardError; end
+class FileAlreadyExists < StandardError; end
+
+require 'fileutils'
+
 module Homebase
 
   # :stopdoc:

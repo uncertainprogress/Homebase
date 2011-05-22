@@ -15,7 +15,11 @@ Examples
 		
 		Homebase.set_app("your_app_name") #creates the directory if it doesn't exist
 		Homebase.create_file('newfile')
+		Homebase.create_file('newfile')
 		filepath = Homebase.get_file_path('newfile')
+		Homebase.delete_file('newfile')
+		
+		Homebase.delete_app('your_app_name')
 
 Requirements
 ------------

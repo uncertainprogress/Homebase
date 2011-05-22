@@ -1,44 +1,47 @@
-homebase
+Homebase
 ===========
 
-FIXME (describe your package)
+Homebase provides the ability to store, retrieve, and delete files in the user's home directory. Everything's stored in a hidden folder titled <.appname>.
 
 Features
 --------
 
-* FIXME (list of features and unsolved problems)
+* Allows you to create, access, and delete files stored in a hidden folder in the user's home directory
 
 Examples
 --------
 
-    FIXME (code sample of usage)
+    require 'homebase'
+		
+		Homebase.set_app("your_app_name") #creates the directory if it doesn't exist
+		Homebase.create_file('newfile')
+		Homebase.create_file('newfile')
+		filepath = Homebase.get_file_path('newfile')
+		Homebase.delete_file('newfile')
+		
+		Homebase.delete_app('your_app_name')
 
 Requirements
 ------------
 
-* FIXME (list of requirements)
+None
 
 Install
 -------
 
-* FIXME (sudo gem install, anything else)
+gem install homebase
 
 Author
 ------
 
-Original author: FIXME (author's name)
-
-Contributors:
-
-* FIXME (contributor 1?)
-* FIXME (contributor 2?)
+Original author: Jeremy Witmer
 
 License
 -------
 
-(The MIT License) FIXME (different license?)
+The MIT License
 
-Copyright (c) 2011 FIXME (author's name)
+Copyright (c) 2011 Jeremy Witmer
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
